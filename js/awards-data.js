@@ -23,7 +23,7 @@
     // (집계는 데이터에 나온 이름 그대로 하고, 이 목록은 순서에만 씁니다)
     medalOrder: ['대상', '금상', '은상', '동상', '장려상'],
     // 수상 학생 수 = 총 수상 수 × 이 숫자 (학생 명단이 없어 수상 1건당 평균 인원으로 추정)
-    studentsPerAward: 2,
+    studentsPerAward: 3,
   };
 
   const MESSAGES = {
