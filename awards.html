@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>대외수상 | 천안오성고등학교 인공지능 중점학교</title>
+  <meta name="description" content="천안오성고등학교 인공지능 중점학교 학생들의 대외수상 현황과 수상내역입니다.">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin>
+
+  <link rel="preload" href="images/banner.jpg" as="image" fetchpriority="high">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- 스크립트: defer = HTML을 다 읽은 뒤 적힌 순서대로 실행 (awards-data.js가 awards.js보다 먼저) -->
+  <script src="js/main.js" defer></script>
+  <script src="js/awards-data.js" defer></script>
+  <script src="js/awards.js" defer></script>
+</head>
+<body>
+  <!-- 공통 헤더: main.js가 header.html을 불러와 넣습니다 -->
+  <div id="header"></div>
+
+  <main>
+    <section class="banner banner--sub" aria-labelledby="page-title">
+      <div class="banner__inner container">
+        <p class="banner__eyebrow" lang="en">Awards</p>
+        <h1 class="banner__title" id="page-title">대외수상</h1>
+      </div>
+    </section>
+
+    <!-- 콘텐츠 입력 영역: 수상 현황 — data/awards.json만 고치면 자동으로 바뀝니다 (HTML에 직접 쓰지 않음) -->
+    <section class="section section--gray" aria-labelledby="summary-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="summary-title">수상 현황</h2>
+        </div>
+
+        <!-- 수상 요약: 전체 기간 기준 (연도 버튼과 상관없이 고정). awards-data.js의 renderAwardSummary()가 그립니다 -->
+        <div id="award-summary"></div>
+      </div>
+    </section>
+
+    <!-- 콘텐츠 입력 영역: 수상내역 목록 — data/awards.json으로 자동 생성 (PC는 표, 모바일은 카드) -->
+    <section class="section" id="award-history" aria-labelledby="list-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="list-title">수상내역</h2>
+        </div>
+
+        <!-- 연도 선택 버튼: awards.js가 JSON에 있는 연도로 자동 생성 (아래 목록만 바뀜) -->
+        <div class="year-filter" id="year-filter" role="group" aria-label="연도 선택"></div>
+
+        <p class="award-list__meta" id="award-list-meta" aria-live="polite"></p>
+        <div class="award-list__body" id="award-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 공통 푸터: main.js가 footer.html을 불러와 넣습니다 -->
+  <div id="footer"></div>
+</body>
+</html>

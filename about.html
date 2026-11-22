@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>학교소개 | 천안오성고등학교 인공지능 중점학교</title>
+  <meta name="description" content="천안오성고등학교 인공지능 중점학교의 인사말, 운영 목적과 운영 방침, 연혁을 소개합니다.">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin>
+
+  <link rel="preload" href="images/banner.jpg" as="image" fetchpriority="high">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- 공통 헤더: main.js가 header.html을 불러와 넣습니다 -->
+  <div id="header"></div>
+
+  <main>
+    <section class="banner banner--sub" aria-labelledby="page-title">
+      <div class="banner__inner container">
+        <p class="banner__eyebrow" lang="en">About</p>
+        <h1 class="banner__title" id="page-title">학교소개</h1>
+      </div>
+    </section>
+
+    <!-- 콘텐츠 입력 영역: 연혁 — 오래된 순서대로, 현재 단계에는 timeline__item--current를 붙입니다
+         ※ 이 연혁(.timeline)은 index.html 메인에도 그대로 표시됩니다. 여기만 고치면 둘 다 바뀝니다. -->
+    <section class="section" id="history" aria-labelledby="history-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="history-title">연혁</h2>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <p class="timeline__period">2017 ~ 2019</p>
+            <p class="timeline__name">소프트웨어 교육 선도학교</p>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__period">2020 ~ 2023</p>
+            <p class="timeline__name">인공지능 융합교육 중점학교</p>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__period">2024 ~ 2025</p>
+            <p class="timeline__name">인공지능 정보교육 중점학교</p>
+          </li>
+          <li class="timeline__item timeline__item--current" aria-current="step">
+            <p class="timeline__period">2026 ~ 현재</p>
+            <p class="timeline__name">인공지능 중점학교</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 콘텐츠 입력 영역: 인사말 — 문단 하나가 <p> 하나입니다. 서명은 greeting__sign에 적습니다 -->
+    <section class="section section--gray" id="greeting" aria-labelledby="greeting-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="greeting-title">인사말</h2>
+        </div>
+
+        <!-- 인사말 본문(왼쪽) + AI 그래픽(오른쪽, 모바일은 숨김) -->
+        <div class="greeting">
+          <div class="greeting__body">
+            <p>천안오성고등학교 인공지능 중점학교 홈페이지를 찾아 주신 여러분, 반갑습니다.</p>
+            <p>인공지능은 이미 우리의 일상과 배움, 일하는 방식을 빠르게 바꾸고 있습니다. 이러한 변화 속에서 학생들에게 필요한 것은 기술을 다루는 능력만이 아니라, 그 기술로 무엇을 할 것인지 스스로 묻고 답하는 힘이라고 생각합니다.</p>
+            <p>우리 학교는 2017년 소프트웨어 교육 선도학교를 시작으로 인공지능 융합교육 중점학교, 인공지능 정보교육 중점학교를 거쳐 2026년부터 인공지능 중점학교를 운영하고 있습니다. 그동안 쌓아 온 경험을 바탕으로 <strong>충남형 인공지능 교육</strong>의 방향에 발맞추어, 학생들이 학교와 지역사회의 문제를 직접 찾고 컴퓨팅 사고력으로 해결해 보는 배움을 이어 가고 있습니다.</p>
+            <p>교실에서 배운 지식이 프로젝트와 체험, 친구들과의 협업을 거쳐 삶의 역량으로 자라날 수 있도록 선생님들도 늘 학생 곁에서 함께 고민하겠습니다. 학생 한 사람 한 사람이 인공지능 시대를 주도적으로 살아가는 따뜻한 세계 시민으로 성장할 수 있도록 학부모님과 지역사회의 많은 관심과 응원을 부탁드립니다.</p>
+            <p>감사합니다.</p>
+            <p class="greeting__sign">천안오성고등학교 인공지능 중점학교</p>
+          </div>
+
+          <!-- 장식용 그래픽: 학교 로고 + AI 칩과 회로 (그림 파일 없이 SVG로 그림, 모바일에서는 숨김) -->
+          <div class="greeting__visual" aria-hidden="true">
+            <img class="greeting__logo" src="images/logo.png" alt="" width="1040" height="196">
+            <svg class="ai-graphic" viewBox="0 0 410 320" focusable="false">
+              <!-- 칩 둘레의 점선 고리 -->
+              <circle class="ai-graphic__ring" cx="205" cy="160" r="98"/>
+              <!-- 회로 선 (칩에서 바깥으로) -->
+              <g>
+                <path class="ai-graphic__trace" d="M169 100 L169 62 L120 62"/>
+                <path class="ai-graphic__trace ai-graphic__trace--on" d="M193 100 L193 36"/>
+                <path class="ai-graphic__trace" d="M217 100 L217 52"/>
+                <path class="ai-graphic__trace" d="M241 100 L241 66 L300 66"/>
+                <path class="ai-graphic__trace" d="M169 220 L169 262 L112 262"/>
+                <path class="ai-graphic__trace" d="M193 220 L193 286"/>
+                <path class="ai-graphic__trace" d="M217 220 L217 272"/>
+                <path class="ai-graphic__trace ai-graphic__trace--on" d="M241 220 L241 256 L296 256"/>
+                <path class="ai-graphic__trace" d="M145 124 L62 124"/>
+                <path class="ai-graphic__trace ai-graphic__trace--on" d="M145 148 L96 148 L96 100 L56 100"/>
+                <path class="ai-graphic__trace" d="M145 172 L80 172"/>
+                <path class="ai-graphic__trace" d="M145 196 L104 196 L104 226 L60 226"/>
+                <path class="ai-graphic__trace" d="M265 124 L312 124 L312 94 L352 94"/>
+                <path class="ai-graphic__trace" d="M265 148 L364 148"/>
+                <path class="ai-graphic__trace" d="M265 172 L338 172"/>
+                <path class="ai-graphic__trace ai-graphic__trace--on" d="M265 196 L300 196 L300 228 L354 228"/>
+              </g>
+              <!-- 강조 선을 따라 흐르는 빛 (움직임은 style.css 16. 움직임) -->
+              <g>
+                <path class="ai-graphic__pulse" d="M193 100 L193 36" pathLength="100" style="animation-delay: 0.8s"/>
+                <path class="ai-graphic__pulse" d="M241 220 L241 256 L296 256" pathLength="100" style="animation-delay: 2.4s"/>
+                <path class="ai-graphic__pulse" d="M145 148 L96 148 L96 100 L56 100" pathLength="100" style="animation-delay: 0s"/>
+                <path class="ai-graphic__pulse" d="M265 196 L300 196 L300 228 L354 228" pathLength="100" style="animation-delay: 1.6s"/>
+              </g>
+              <!-- 선 끝 점 -->
+              <g>
+                <circle class="ai-graphic__node" cx="120" cy="62" r="5"/>
+                <circle class="ai-graphic__node ai-graphic__node--on" cx="193" cy="36" r="6.5"/>
+                <circle class="ai-graphic__node" cx="217" cy="52" r="5"/>
+                <circle class="ai-graphic__node" cx="300" cy="66" r="5"/>
+                <circle class="ai-graphic__node" cx="112" cy="262" r="5"/>
+                <circle class="ai-graphic__node" cx="193" cy="286" r="5"/>
+                <circle class="ai-graphic__node" cx="217" cy="272" r="5"/>
+                <circle class="ai-graphic__node ai-graphic__node--on" cx="296" cy="256" r="6.5"/>
+                <circle class="ai-graphic__node" cx="62" cy="124" r="5"/>
+                <circle class="ai-graphic__node ai-graphic__node--on" cx="56" cy="100" r="6.5"/>
+                <circle class="ai-graphic__node" cx="80" cy="172" r="5"/>
+                <circle class="ai-graphic__node" cx="60" cy="226" r="5"/>
+                <circle class="ai-graphic__node" cx="352" cy="94" r="5"/>
+                <circle class="ai-graphic__node" cx="364" cy="148" r="5"/>
+                <circle class="ai-graphic__node" cx="338" cy="172" r="5"/>
+                <circle class="ai-graphic__node ai-graphic__node--on" cx="354" cy="228" r="6.5"/>
+              </g>
+              <!-- 가운데 칩 + AI 글자 -->
+              <rect class="ai-graphic__chip" x="145" y="100" width="120" height="120" rx="16"/>
+              <rect class="ai-graphic__chip-line" x="155" y="110" width="100" height="100" rx="10"/>
+              <text class="ai-graphic__label" x="205" y="162" text-anchor="middle" dominant-baseline="central">AI</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 콘텐츠 입력 영역: 운영 목적 — 항목 하나가 <div class="purpose-list__item"> 하나입니다 -->
+    <section class="section" id="purpose" aria-labelledby="purpose-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="purpose-title">운영 목적</h2>
+        </div>
+
+        <dl class="purpose-list">
+          <div class="purpose-list__item">
+            <dt class="purpose-list__title">생활 속 문제 탐색</dt>
+            <dd class="purpose-list__desc">학교와 지역사회에서 마주하는 문제를 탐색하고, 이를 UN 지속가능발전목표(SDGs)와 연계하여 세계 시민으로서의 책임감을 기릅니다.</dd>
+          </div>
+          <div class="purpose-list__item">
+            <dt class="purpose-list__title">문제 해결 역량 강화</dt>
+            <dd class="purpose-list__desc">컴퓨팅 사고력을 발휘하고 서로 협력하여 실생활의 문제를 적극적으로 해결하는 역량을 기릅니다.</dd>
+          </div>
+          <div class="purpose-list__item">
+            <dt class="purpose-list__title">체험·탐구 기회 제공</dt>
+            <dd class="purpose-list__desc">컴퓨팅 사고력을 키우고 미래 정보 인재를 기르기 위해, 체험과 탐구 중심의 다양한 교내 프로그램을 제공합니다.</dd>
+          </div>
+          <div class="purpose-list__item">
+            <dt class="purpose-list__title">정보과학 이해 심화</dt>
+            <dd class="purpose-list__desc">빠르게 발전하는 정보과학 기술의 흐름을 살피고, 정보과학이 왜 중요한지 깊이 이해하는 기회를 마련합니다.</dd>
+          </div>
+          <div class="purpose-list__item">
+            <dt class="purpose-list__title">공동체·협업 역량 함양</dt>
+            <dd class="purpose-list__desc">교육공동체가 함께 활동하고 소통하며, 미래 사회가 요구하는 공동체 역량과 협업 역량을 기릅니다.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 콘텐츠 입력 영역: 운영 방침 — 카드 하나가 <li> 하나입니다. 아래 버튼 묶음은 관련 페이지로 이어집니다 -->
+    <section class="section section--gray" id="policy" aria-labelledby="policy-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="policy-title">운영 방침</h2>
+        </div>
+
+        <ul class="card-grid card-grid--3">
+          <li>
+            <article class="card">
+              <div class="card__body">
+                <h3 class="card__title">자기 주도적 진로 탐색</h3>
+                <p class="card__desc">프로젝트 활동, 체험 프로그램, 챌린지 등 다양한 활동을 통해 학생들이 인공지능(AI)·정보 분야의 진로를 탐색하고 스스로 역량을 키우는 교육 환경을 조성합니다.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <div class="card__body">
+                <h3 class="card__title">체험 중심 학습</h3>
+                <p class="card__desc">인공지능 기술과 컴퓨터 기술의 발전 과정을 학생들이 직접 보고 체험할 수 있는 기회를 제공합니다.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <div class="card__body">
+                <h3 class="card__title">학생 주도 참여</h3>
+                <p class="card__desc">학생이 주도적으로 참여하는 행사를 중심으로 기획하여 소통과 협력의 역량을 기릅니다.</p>
+              </div>
+            </article>
+          </li>
+        </ul>
+
+        <nav class="related" aria-labelledby="related-title">
+          <p class="related__text" id="related-title">운영 방침에 따른 교육과정과 특색활동,<br>그리고 그 성과를 확인해 보세요.</p>
+          <ul class="related__links">
+            <li><a class="btn" href="curriculum.html">교육과정 <span aria-hidden="true">→</span></a></li>
+            <li><a class="btn" href="activities.html">특색활동 <span aria-hidden="true">→</span></a></li>
+            <li><a class="btn" href="awards.html">대외수상 <span aria-hidden="true">→</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <!-- 공통 푸터: main.js가 footer.html을 불러와 넣습니다 -->
+  <div id="footer"></div>
+</body>
+</html>

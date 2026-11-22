@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>천안오성고등학교 인공지능 중점학교</title>
+  <meta name="description" content="충남형 인공지능 교육을 선도하는 천안오성고등학교 인공지능 중점학교 홈페이지입니다.">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin>
+
+  <link rel="preload" href="images/banner.jpg" as="image" fetchpriority="high">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- 스크립트: defer = HTML을 다 읽은 뒤 적힌 순서대로 실행 -->
+  <script src="js/main.js" defer></script>
+  <script src="js/awards-data.js" defer></script>
+</head>
+<body>
+  <!-- 공통 헤더: main.js가 header.html을 불러와 넣습니다 -->
+  <div id="header"></div>
+
+  <main>
+    <section class="banner banner--main" aria-labelledby="banner-title">
+      <div class="banner__inner container">
+        <p class="banner__eyebrow" lang="en">Cheonan Ohseong High School</p>
+        <h1 class="banner__title" id="banner-title">
+          <span class="banner__title-line">충남형 인공지능 교육을 선도하는,</span>
+          <span class="banner__title-line">천안오성고등학교 인공지능 중점학교</span>
+        </h1>
+        <p class="banner__desc">인공지능 융합 교육과정으로 미래 사회 인재를 양성합니다.</p>
+      </div>
+    </section>
+
+    <!-- 연혁: about.html의 연혁(.timeline)을 그대로 가져와 보여 줍니다 (main.js) — 내용은 about.html에서만 고치세요 -->
+    <section class="section" aria-labelledby="home-history-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="home-history-title">2017년부터 이어 온 인공지능 교육</h2>
+          <a class="text-link" href="about.html#history">학교소개 보기 <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div data-include-from="about.html" data-include-select=".timeline"></div>
+      </div>
+    </section>
+
+    <!-- AI·SW 교육과정: curriculum.html의 숫자 카드(.curriculum-stats)를 그대로 가져옵니다 (main.js) — 숫자는 curriculum.html에서만 고치세요 -->
+    <section class="section section--gray" aria-labelledby="home-curriculum-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="home-curriculum-title">AI·SW 교육과정</h2>
+          <a class="text-link" href="curriculum.html">교육과정 보기 <span aria-hidden="true">→</span></a>
+        </div>
+
+        <!-- 카드 묶음 전체가 교육과정 페이지의 과목 편성표(#curriculum-table)로 가는 링크 -->
+        <a class="stat-link" href="curriculum.html#curriculum-table" data-include-from="curriculum.html" data-include-select=".curriculum-stats"></a>
+      </div>
+    </section>
+
+    <!-- 콘텐츠 입력 영역: 특색활동 바로가기 — 카드 하나가 <li> 하나입니다. 사진은 activities.html의 현장 사진 중 하나를 씁니다 -->
+    <section class="section" aria-labelledby="home-activities-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="home-activities-title">특색활동</h2>
+          <a class="text-link" href="activities.html">특색활동 전체 보기 <span aria-hidden="true">→</span></a>
+        </div>
+
+        <ul class="card-grid card-grid--4">
+          <li>
+            <a class="card card--link card--photo" href="activities.html#festival">
+              <div class="card__media">
+                <img class="card__img" src="images/image01.jpg" width="640" height="480" loading="lazy" decoding="async" alt="">
+              </div>
+              <div class="card__body">
+                <div class="card__head">
+                  <h3 class="card__title">AI·코딩 페스티벌</h3>
+                  <span class="card__icon" aria-hidden="true"></span>
+                </div>
+                <p class="card__desc">선배들이 기획한 AI·SW 부스를 돌며 미션을 해결하는 축제</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="card card--link card--photo" href="activities.html#career-camp">
+              <div class="card__media">
+                <img class="card__img" src="images/image10.jpg" width="853" height="480" loading="lazy" decoding="async" alt="">
+              </div>
+              <div class="card__body">
+                <div class="card__head">
+                  <h3 class="card__title">인공지능 융합 진로 캠프</h3>
+                  <span class="card__icon" aria-hidden="true"></span>
+                </div>
+                <p class="card__desc">IT 기업과 대학 연구실을 찾아가 AI·SW 진로를 그려 봅니다</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="card card--link card--photo" href="activities.html#coding-challenge">
+              <div class="card__media">
+                <img class="card__img" src="images/image15.jpg" width="640" height="480" loading="lazy" decoding="async" alt="">
+              </div>
+              <div class="card__body">
+                <div class="card__head">
+                  <h3 class="card__title">월간 창의 코딩 챌린지</h3>
+                  <span class="card__icon" aria-hidden="true"></span>
+                </div>
+                <p class="card__desc">매달 코드온 대회와 알고리즘 공유회로 실력을 쌓습니다</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="card card--link card--photo" href="activities.html#sdgs-project">
+              <div class="card__media">
+                <img class="card__img" src="images/image06.jpg" width="640" height="480" loading="lazy" decoding="async" alt="">
+              </div>
+              <div class="card__body">
+                <div class="card__head">
+                  <h3 class="card__title">지속가능발전 문제해결<br>인공지능 융합 프로젝트</h3>
+                  <span class="card__icon" aria-hidden="true"></span>
+                </div>
+                <p class="card__desc">SDGs와 연계해 우리 주변의 문제를 인공지능으로 해결합니다</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 대외수상: 수상 요약·최근 수상 — data/awards.json만 고치면 자동으로 바뀝니다 -->
+    <section class="section section--gray" aria-labelledby="home-awards-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="home-awards-title">대외수상</h2>
+          <a class="text-link" href="awards.html">수상내역 전체 보기 <span aria-hidden="true">→</span></a>
+        </div>
+
+        <!-- 전체 기간 요약: awards-data.js가 data-award-summary 자리에 그립니다 (카드 묶음 전체가 대외수상 페이지의 수상내역(#award-history)으로 가는 링크) -->
+        <a class="stat-link" href="awards.html#award-history" data-award-summary></a>
+
+        <!-- 최근 수상: awards-data.js가 data-award-recent 자리에 그립니다 (숫자 = 보여 줄 대회 수) -->
+        <h3 class="recent-awards__head">최근 수상</h3>
+        <div data-award-recent="3"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 공통 푸터: main.js가 footer.html을 불러와 넣습니다 -->
+  <div id="footer"></div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>교육과정 | 천안오성고등학교 인공지능 중점학교</title>
+  <meta name="description" content="천안오성고등학교 인공지능 중점학교의 AI·SW·정보 관련 교육과정과 과목을 소개합니다.">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin>
+
+  <link rel="preload" href="images/banner.jpg" as="image" fetchpriority="high">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- 공통 헤더: main.js가 header.html을 불러와 넣습니다 -->
+  <div id="header"></div>
+
+  <main>
+    <section class="banner banner--sub" aria-labelledby="page-title">
+      <div class="banner__inner container">
+        <p class="banner__eyebrow" lang="en">Curriculum</p>
+        <h1 class="banner__title" id="page-title">교육과정</h1>
+      </div>
+    </section>
+
+    <!-- 콘텐츠 입력 영역: 숫자로 보는 교육과정 — 아래 표 내용이 바뀌면 숫자와 막대 너비(style="width")도 함께 고치세요
+         ※ 이 숫자 카드(.curriculum-stats)는 index.html 메인에도 그대로 표시됩니다. 여기만 고치면 둘 다 바뀝니다. -->
+    <section class="section section--gray" id="curriculum-overview" aria-label="숫자로 보는 교육과정">
+      <div class="container">
+        <dl class="curriculum-stats">
+          <div class="stat-card">
+            <dt class="stat-card__label">AI·SW 편성 학점</dt>
+            <dd class="stat-card__value">
+              <span class="stat-card__number" data-count>43</span>
+              <span class="stat-card__unit">학점</span>
+            </dd>
+            <dd class="stat-card__desc">AI·SW 과목 학점 합계</dd>
+          </div>
+          <div class="stat-card">
+            <dt class="stat-card__label">AI·SW 과목 수</dt>
+            <dd class="stat-card__value">
+              <span class="stat-card__number" data-count>11</span>
+              <span class="stat-card__unit">과목</span>
+            </dd>
+            <dd class="stat-card__desc">1~3학년 AI·SW 개설 과목</dd>
+          </div>
+          <div class="stat-card">
+            <dt class="stat-card__label">AI·SW 과목 학점 비율</dt>
+            <dd class="stat-card__value">
+              <span class="stat-card__number" data-count>22.4</span>
+              <span class="stat-card__unit">%</span>
+            </dd>
+            <dd class="stat-card__bar" aria-hidden="true"><span class="stat-card__bar-fill" style="width: 22.4%"></span></dd>
+            <dd class="stat-card__desc">총 이수 학점 192학점 대비</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 콘텐츠 입력 영역: 교육과정 편성표 — 2026·2027학년도 입학생 편제표 중 AI·SW·정보 관련 과목만 정리 (대외수상 표와 같은 스타일) -->
+    <section class="section" id="curriculum-table" aria-labelledby="table-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="table-title">AI·SW 과목 편성표</h2>
+        </div>
+
+        <!-- 학년별로 <tbody> 하나. 첫 줄의 rowspan 숫자 = 그 학년의 과목 수 (1과목이면 rowspan 생략)
+             과목을 바꾸면 위 숫자 카드도 함께 고치세요. -->
+        <div class="curriculum-table" role="region" aria-labelledby="curriculum-caption" tabindex="0">
+          <table class="data-table data-table--plain">
+            <caption class="visually-hidden" id="curriculum-caption">학년별 AI·SW 과목 편성</caption>
+            <colgroup>
+              <col class="curriculum-table__col--grade">
+              <col>
+              <col class="curriculum-table__col--term">
+              <col class="curriculum-table__col--credit">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">학년</th>
+                <th scope="col" class="data-table__cell--start">과목</th>
+                <th scope="col">학기</th>
+                <th scope="col">학점</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="rowgroup">
+                  <span class="curriculum-table__grade-name">1학년</span>
+                </th>
+                <td class="data-table__cell--start curriculum-table__subject">정보</td>
+                <td><span class="badge-list curriculum-table__terms"><span class="badge">1학기</span><span class="badge">2학기</span></span></td>
+                <td>3</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th scope="rowgroup" rowspan="5">
+                  <span class="curriculum-table__grade-name">2학년</span>
+                </th>
+                <td class="data-table__cell--start curriculum-table__subject">프로그래밍</td>
+                <td><span class="badge-list curriculum-table__terms"><span class="badge">1학기</span></span></td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td class="data-table__cell--start curriculum-table__subject">인공지능 기초</td>
+                <td><span class="badge-list curriculum-table__terms"><span class="badge">1학기</span></span></td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td class="data-table__cell--start curriculum-table__subject">인공지능 수학</td>
+                <td><span class="badge-list curriculum-table__terms"><span class="badge">2학기</span></span></td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td class="data-table__cell--start curriculum-table__subject">데이터 과학</td>
+                <td><span class="badge-list curriculum-table__terms"><span class="badge">2학기</span></span></td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td class="data-table__cell--start curriculum-table__subject">소프트웨어와 생활</td>
+                <td><span class="badge-list curriculum-table__terms"><span class="badge">2학기</span></span></td>
+                <td>4</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th scope="rowgroup" rowspan="5">
+                  <span class="curriculum-table__grade-name">3학년</span>
+                </th>
+                <td class="data-table__cell--start curriculum-table__subject">정보과학</td>
+                <td><span class="badge-list curriculum-table__terms"><span class="badge">1학기</span></span></td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td class="data-table__cell--start curriculum-table__subject">사물인터넷과 센서 제어</td>
+                <td><span class="badge-list curriculum-table__terms"><span class="badge">1학기</span></span></td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td class="data-table__cell--start curriculum-table__subject">빅데이터 분석</td>
+                <td><span class="badge-list curriculum-table__terms"><span class="badge">2학기</span></span></td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td class="data-table__cell--start curriculum-table__subject">응용 프로그래밍 개발</td>
+                <td><span class="badge-list curriculum-table__terms"><span class="badge">2학기</span></span></td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td class="data-table__cell--start curriculum-table__subject">생성형 인공지능 프로젝트</td>
+                <td><span class="badge-list curriculum-table__terms"><span class="badge">2학기</span></span></td>
+                <td>4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 공통 푸터: main.js가 footer.html을 불러와 넣습니다 -->
+  <div id="footer"></div>
+</body>
+</html>

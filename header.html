@@ -1,0 +1,31 @@
+<!--
+  ===== 공통 헤더 (header.html) =====
+  - main.js가 각 페이지의 <div id="header"></div> 안에 불러와 넣습니다.
+  - 경로는 이 조각을 불러가는 페이지(루트의 index.html 등)를 기준으로 합니다.
+  - 현재 페이지 메뉴의 active 클래스, 모바일 메뉴 열기/닫기는 main.js가 처리합니다.
+-->
+<header class="site-header">
+  <div class="site-header__inner container">
+    <!-- 로고: 누르면 홈(index.html)으로 이동 -->
+    <a class="site-header__logo" href="index.html">
+      <img class="site-header__logo-img" src="images/logo.png" alt="천안오성고등학교" width="1040" height="196">
+    </a>
+
+    <!-- 모바일 메뉴 버튼: 768px 이하에서만 보입니다 -->
+    <button class="site-header__toggle" type="button" aria-label="메뉴" aria-expanded="false" aria-controls="site-nav">
+      <span class="site-header__toggle-bar"></span>
+      <span class="site-header__toggle-bar"></span>
+      <span class="site-header__toggle-bar"></span>
+    </button>
+
+    <!-- 주 메뉴 -->
+    <nav class="site-nav" id="site-nav" aria-label="주 메뉴">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="about.html">학교소개</a></li>
+        <li><a class="site-nav__link" href="curriculum.html">교육과정</a></li>
+        <li><a class="site-nav__link" href="activities.html">특색활동</a></li>
+        <li><a class="site-nav__link" href="awards.html">대외수상</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
