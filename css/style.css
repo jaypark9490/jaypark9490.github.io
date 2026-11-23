@@ -967,7 +967,7 @@ address {
   column-gap: var(--space-lg);
 }
 
-/* 푸터 링크: 전화번호, 카카오톡 오픈채팅 (이름표는 일반 글자, 값만 흰색 링크) */
+/* 푸터 링크: 전화번호 (이름표는 일반 글자, 값만 흰색 링크) */
 .site-footer__link {
   color: var(--color-on-dark);
   font-weight: 600;
