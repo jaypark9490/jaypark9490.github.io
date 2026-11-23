@@ -1327,6 +1327,16 @@ address {
   aspect-ratio: 16 / 9;
 }
 
+/* 사진이 아직 없을 때: 같은 크기의 빈 칸에 '이미지 준비중' 글자 */
+.photo-grid__img--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
 /* 화면 캡처처럼 위쪽이 중요한 사진: 위를 기준으로 자름 */
 .photo-grid__img--top {
   object-position: top;
@@ -1447,6 +1457,14 @@ address {
   color: var(--color-text);
   font-size: var(--text-md);
   line-height: 1.65;
+}
+
+/* 안내 박스 안 여러 줄 목록 (예: 교육과정 표 아래 설명) */
+.info-note__list {
+  display: grid;
+  gap: var(--space-xs);
+  padding-left: 1.2em;
+  list-style: disc;
 }
 
 .info-note strong {

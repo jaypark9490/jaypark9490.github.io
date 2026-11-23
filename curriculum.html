@@ -35,7 +35,7 @@
           <div class="stat-card">
             <dt class="stat-card__label">AI·SW 편성 학점</dt>
             <dd class="stat-card__value">
-              <span class="stat-card__number" data-count>43</span>
+              <span class="stat-card__number" data-count>39</span>
               <span class="stat-card__unit">학점</span>
             </dd>
             <dd class="stat-card__desc">AI·SW 과목 학점 합계</dd>
@@ -43,7 +43,7 @@
           <div class="stat-card">
             <dt class="stat-card__label">AI·SW 과목 수</dt>
             <dd class="stat-card__value">
-              <span class="stat-card__number" data-count>11</span>
+              <span class="stat-card__number" data-count>10</span>
               <span class="stat-card__unit">과목</span>
             </dd>
             <dd class="stat-card__desc">1~3학년 AI·SW 개설 과목</dd>
@@ -51,21 +51,22 @@
           <div class="stat-card">
             <dt class="stat-card__label">AI·SW 과목 학점 비율</dt>
             <dd class="stat-card__value">
-              <span class="stat-card__number" data-count>22.4</span>
+              <span class="stat-card__number" data-count>20.3</span>
               <span class="stat-card__unit">%</span>
             </dd>
-            <dd class="stat-card__bar" aria-hidden="true"><span class="stat-card__bar-fill" style="width: 22.4%"></span></dd>
+            <dd class="stat-card__bar" aria-hidden="true"><span class="stat-card__bar-fill" style="width: 20.3%"></span></dd>
             <dd class="stat-card__desc">총 이수 학점 192학점 대비</dd>
           </div>
         </dl>
       </div>
     </section>
 
-    <!-- 콘텐츠 입력 영역: 교육과정 편성표 — 2026·2027학년도 입학생 편제표 중 AI·SW·정보 관련 과목만 정리 (대외수상 표와 같은 스타일) -->
+    <!-- 콘텐츠 입력 영역: 교육과정 편성표 — 2027학년도 입학생 편제표 중 AI·SW·정보 관련 과목만 정리 (대외수상 표와 같은 스타일) -->
     <section class="section" id="curriculum-table" aria-labelledby="table-title">
       <div class="container">
         <div class="section__head">
           <h2 class="section__title" id="table-title">AI·SW 과목 편성표</h2>
+          <p class="section__lead">2027학년도 입학생 3년간 교육과정 편제표 가운데<br>AI·SW·정보 관련 과목만 모았습니다.</p>
         </div>
 
         <!-- 학년별로 <tbody> 하나. 첫 줄의 rowspan 숫자 = 그 학년의 과목 수 (1과목이면 rowspan 생략)
@@ -99,7 +100,7 @@
             </tbody>
             <tbody>
               <tr>
-                <th scope="rowgroup" rowspan="5">
+                <th scope="rowgroup" rowspan="6">
                   <span class="curriculum-table__grade-name">2학년</span>
                 </th>
                 <td class="data-table__cell--start curriculum-table__subject">프로그래밍</td>
@@ -108,6 +109,11 @@
               </tr>
               <tr>
                 <td class="data-table__cell--start curriculum-table__subject">인공지능 기초</td>
+                <td><span class="badge-list curriculum-table__terms"><span class="badge">1학기</span></span></td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td class="data-table__cell--start curriculum-table__subject">로봇과 공학세계</td>
                 <td><span class="badge-list curriculum-table__terms"><span class="badge">1학기</span></span></td>
                 <td>4</td>
               </tr>
@@ -129,7 +135,7 @@
             </tbody>
             <tbody>
               <tr>
-                <th scope="rowgroup" rowspan="5">
+                <th scope="rowgroup" rowspan="3">
                   <span class="curriculum-table__grade-name">3학년</span>
                 </th>
                 <td class="data-table__cell--start curriculum-table__subject">정보과학</td>
@@ -137,27 +143,26 @@
                 <td>4</td>
               </tr>
               <tr>
-                <td class="data-table__cell--start curriculum-table__subject">사물인터넷과 센서 제어</td>
+                <td class="data-table__cell--start curriculum-table__subject">창의공학설계</td>
                 <td><span class="badge-list curriculum-table__terms"><span class="badge">1학기</span></span></td>
                 <td>4</td>
               </tr>
               <tr>
-                <td class="data-table__cell--start curriculum-table__subject">빅데이터 분석</td>
-                <td><span class="badge-list curriculum-table__terms"><span class="badge">2학기</span></span></td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <td class="data-table__cell--start curriculum-table__subject">응용 프로그래밍 개발</td>
-                <td><span class="badge-list curriculum-table__terms"><span class="badge">2학기</span></span></td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <td class="data-table__cell--start curriculum-table__subject">생성형 인공지능 프로젝트</td>
+                <td class="data-table__cell--start curriculum-table__subject">생성형 인공지능 프로젝트<span aria-hidden="true">＊</span></td>
                 <td><span class="badge-list curriculum-table__terms"><span class="badge">2학기</span></span></td>
                 <td>4</td>
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <!-- 표 아래 설명: 한 줄이 <li> 하나입니다 -->
+        <div class="info-note">
+          <ul class="info-note__list">
+            <li><strong>정보</strong>는 1학년 모든 학생이 배우며, 반별로 기술·가정과 학기를 나누어 1학기 또는 2학기에 이수합니다.</li>
+            <li><strong>2·3학년 AI·SW 과목</strong>은 학기마다 여러 과목 가운데 골라 듣는 선택 과목으로, 진로에 맞춰 원하는 과목을 이어서 들을 수 있습니다.</li>
+            <li><strong>생성형 인공지능 프로젝트</strong>＊는 국가 교육과정에 없는 과목(고시 외 과목)으로, 학교가 직접 개설해 운영합니다.</li>
+          </ul>
         </div>
       </div>
     </section>
