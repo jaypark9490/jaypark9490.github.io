@@ -19,9 +19,6 @@
      -------------------------------------------------------------------------- */
   const CONFIG = {
     url: 'data/awards.json',
-    // 종류 표시 순서: 이 목록 → 1위, 2위, 3위 … → 그 밖의 상(가나다순)
-    // (집계는 데이터에 나온 이름 그대로 하고, 이 목록은 순서에만 씁니다)
-    medalOrder: ['대상', '금상', '은상', '동상', '장려상'],
     // 수상 학생 수 = 총 수상 수 × 이 숫자 (학생 명단이 없어 수상 1건당 평균 인원으로 추정)
     studentsPerAward: 3,
   };
@@ -95,15 +92,18 @@
     return { byKind, total };
   }
 
-  /** 정렬 기준 [묶음, 묶음 안 순서]: 메달형 0 → 순위형 1 → 그 밖의 상 2 */
+  /**
+   * 정렬 기준 [묶음, 묶음 안 순서]: 등급표(PRIZE_TIERS, 5번 항목) 순서 → 표에 없는 4위·5위 … → 그 밖의 상
+   * (PRIZE_BY_KIND는 아래에 정의되지만, 이 함수는 화면을 그릴 때 불리므로 문제없음)
+   */
   function getKindOrder(kind) {
-    const medalIndex = CONFIG.medalOrder.indexOf(kind);
-    if (medalIndex !== -1) return [0, medalIndex];
+    const prize = PRIZE_BY_KIND[kind];
+    if (prize) return [prize.level, prize.index];
 
     const rank = kind.match(/^(\d+)위$/);
-    if (rank) return [1, Number(rank[1])];
+    if (rank) return [PRIZE_TIERS.length, Number(rank[1])];
 
-    return [2, 0];
+    return [PRIZE_TIERS.length + 1, 0];
   }
 
   function compareKinds(a, b) {
@@ -114,7 +114,7 @@
 
   /**
    * { 종류: 개수 } 객체를 표시 순서대로 정렬한 배열로 바꿉니다.
-   * 대상 → 금상 → 은상 → 동상 → 장려상 → 1위 → 2위 → … → 그 밖의 상(가나다순)
+   * 등급 높은 순(대상·우승 → 금상·최우수상·1위 … → 입상·입선) → 4위 → 5위 … → 그 밖의 상(가나다순)
    * @returns {Array<{ kind: string, count: number }>}
    */
   function sortAwardKinds(byKind) {
@@ -240,33 +240,41 @@
      -------------------------------------------------------------------------- */
 
   /* 아이콘 모양 (색은 CSS의 badge--○○가 정함, 글자로 상 이름이 있으므로 장식용) */
-  // 메달: 리본 두 줄 + 메달 — 대상·금·은·동, 1~3위
+  // 메달: 리본 두 줄 + 메달 — 최상위 ~ 3등급
   const MEDAL_ICON = `<svg class="badge__icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
     <path d="M3.5 1h3l1.6 4.2H5.1zM9.5 1h3l-1.6 4.2H7.9z" fill="currentColor" opacity="0.55"/>
     <circle cx="8" cy="10.5" r="4.5" fill="currentColor"/>
     <circle cx="8" cy="10.5" r="2.6" fill="none" stroke="#fff" stroke-opacity="0.7" stroke-width="1"/>
   </svg>`;
 
-  // 리본 휘장: 원 + 아래로 늘어진 꼬리 두 개 — 우수상·장려상·입상
+  // 리본 휘장: 원 + 아래로 늘어진 꼬리 두 개 — 4등급, 참가 인정
   const ROSETTE_ICON = `<svg class="badge__icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
     <path d="M5.3 9.2 4 15l4-1.9 4 1.9-1.3-5.8z" fill="currentColor" opacity="0.55"/>
     <circle cx="8" cy="6" r="4.8" fill="currentColor"/>
     <circle cx="8" cy="6" r="2.7" fill="none" stroke="#fff" stroke-opacity="0.7" stroke-width="1"/>
   </svg>`;
 
-  /* 아이콘을 붙일 상 → [색 이름(badge--○○), 아이콘 모양] */
-  const PRIZE_ICONS = {
-    대상: ['grand', MEDAL_ICON],
-    금상: ['gold', MEDAL_ICON],
-    은상: ['silver', MEDAL_ICON],
-    동상: ['bronze', MEDAL_ICON],
-    '1위': ['gold', MEDAL_ICON],
-    '2위': ['silver', MEDAL_ICON],
-    '3위': ['bronze', MEDAL_ICON],
-    우수상: ['merit', ROSETTE_ICON],
-    장려상: ['entry', ROSETTE_ICON],
-    입상: ['entry', ROSETTE_ICON],
-  };
+  /*
+   * 수상 등급표 — 위에서부터 높은 등급. [색 이름(badge--○○), 아이콘 모양, 상 이름들(메달형·우수형·순위형)]
+   * 배지 색·아이콘과 표시 순서를 모두 이 표로 정합니다.
+   * 표에 없는 상(총장상·기술상 같은 특별상, 4위 이하)은 아이콘 없이 기본 배지로 뒤쪽에 표시됩니다.
+   */
+  const PRIZE_TIERS = [
+    ['grand',  MEDAL_ICON,   ['대상', '우승']],                      // 최상위
+    ['gold',   MEDAL_ICON,   ['금상', '최우수상', '1위', '준우승']], // 1등급
+    ['silver', MEDAL_ICON,   ['은상', '우수상', '2위']],             // 2등급
+    ['bronze', MEDAL_ICON,   ['동상', '3위', '4강']],                // 3등급
+    ['merit',  ROSETTE_ICON, ['장려상', '가작', '8강']],             // 4등급
+    ['entry',  ROSETTE_ICON, ['입상', '입선', '본선 진출']],         // 참가 인정
+  ];
+
+  /** 상 이름 → { tier, icon, level(등급 순서), index(등급 안 순서) } */
+  const PRIZE_BY_KIND = {};
+  PRIZE_TIERS.forEach(([tier, icon, kinds], level) => {
+    kinds.forEach((kind, index) => {
+      PRIZE_BY_KIND[kind] = { tier, icon, level, index };
+    });
+  });
 
   /** 대회 하나의 수상 배지 (수상이 없으면 '-') */
   function renderPrizeBadges(text) {
@@ -278,9 +286,9 @@
 
     // 2개 이상일 때만 개수를 붙입니다: 대상, 금상 3, 1위 …
     const items = kinds.map(({ kind, count }) => {
-      const [tier, icon] = PRIZE_ICONS[kind] || [];
-      const tierClass = tier ? ` badge--${tier}` : '';
-      const iconHtml = icon || '';
+      const prize = PRIZE_BY_KIND[kind];
+      const tierClass = prize ? ` badge--${prize.tier}` : '';
+      const iconHtml = prize ? prize.icon : '';
       const countHtml = count > 1 ? ` <strong class="badge__count">${count}</strong>` : '';
       return `<li class="badge${tierClass}">${iconHtml}${escapeHtml(kind)}${countHtml}</li>`;
     });

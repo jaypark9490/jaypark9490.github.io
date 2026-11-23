@@ -675,8 +675,8 @@ address {
   font-weight: 800;
 }
 
-/* 수상 아이콘 (수상내역) — 메달: 대상·금·은·동, 1~3위 / 리본 휘장: 우수상·입상
-   색은 아래 badge--○○에서 지정 */
+/* 수상 아이콘 (수상내역) — 메달: 최상위~3등급 / 리본 휘장: 4등급·참가 인정
+   어떤 상이 어느 등급인지는 awards-data.js의 PRIZE_TIERS, 색은 아래 badge--○○에서 지정 */
 .badge__icon {
   flex-shrink: 0;
   align-self: center;
@@ -685,12 +685,12 @@ address {
   color: var(--medal-color, currentColor);
 }
 
-.badge--grand  { --medal-color: #172554; } /* 대상: 메인 남색 */
-.badge--gold   { --medal-color: #c08a12; } /* 금상 · 1위 */
-.badge--silver { --medal-color: #8b95a7; } /* 은상 · 2위 */
-.badge--bronze { --medal-color: #b4683a; } /* 동상 · 3위 */
-.badge--merit  { --medal-color: #2563eb; } /* 우수상: 포인트 파랑 */
-.badge--entry  { --medal-color: #5f6b7a; } /* 입상: 보조 회색 */
+.badge--grand  { --medal-color: #172554; } /* 최상위 (대상·우승): 메인 남색 */
+.badge--gold   { --medal-color: #c08a12; } /* 1등급 (금상·최우수상·1위·준우승) */
+.badge--silver { --medal-color: #8b95a7; } /* 2등급 (은상·우수상·2위) */
+.badge--bronze { --medal-color: #b4683a; } /* 3등급 (동상·3위·4강) */
+.badge--merit  { --medal-color: #2563eb; } /* 4등급 (장려상·가작·8강): 포인트 파랑 */
+.badge--entry  { --medal-color: #5f6b7a; } /* 참가 인정 (입상·입선·본선 진출): 보조 회색 */
 
 
 /* ==========================================================================
