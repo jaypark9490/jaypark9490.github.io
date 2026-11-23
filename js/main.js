@@ -93,6 +93,29 @@
   window.CountUp = { start: startCountUp };
 
   /**
+   * 비율 막대·연혁 선: 화면에 처음 보이면 한 번만 차오르게 합니다.
+   * data-grow를 붙이면 CSS가 비워 두고, 보이면 is-grown을 붙여 채웁니다. (JS가 없으면 처음부터 채워진 채)
+   * @param {ParentNode} container 찾을 범위 (document 또는 요소)
+   */
+  function startGrow(container) {
+    const items = [...container.querySelectorAll('.stat-card__bar-fill:not([data-grow]), .timeline__item:not([data-grow])')];
+    if (items.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+        entry.target.classList.add('is-grown');
+      });
+    }, { threshold: 0.6 });
+
+    items.forEach((el) => {
+      el.dataset.grow = '';
+      observer.observe(el);
+    });
+  }
+
+  /**
    * HTML 조각 파일을 불러와 자리 요소 안에 넣습니다.
    * @param {string} selector 넣을 자리 (예: '#header')
    * @param {string} url      불러올 파일 (예: 'header.html')
@@ -215,6 +238,7 @@
 
       target.replaceChildren(document.importNode(source, true));
       startCountUp(target); // 가져온 부분에 숫자 카드가 있으면 카운트업 (index.html의 교육과정 숫자)
+      startGrow(target);    // 가져온 부분의 비율 막대·연혁 선 (index.html)
     } catch (error) {
       console.error(`[main.js] ${url}의 ${selector} 부분을 불러오지 못했습니다.`, error);
       target.innerHTML = '<p class="status-box">내용을 불러올 수 없습니다.</p>';
@@ -228,6 +252,7 @@
 
     // HTML에 직접 쓴 숫자 카드 카운트업 (curriculum.html)
     startCountUp(document);
+    startGrow(document);
 
     // 다른 페이지에서 가져오는 부분 (헤더·푸터를 기다리지 않고 함께 불러옴)
     document.querySelectorAll('[data-include-from][data-include-select]').forEach(loadInclude);
