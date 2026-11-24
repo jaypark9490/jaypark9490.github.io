@@ -1467,6 +1467,10 @@ address {
   list-style: disc;
 }
 
+* + .info-note__list {
+  margin-top: var(--space-xs);
+}
+
 .info-note strong {
   color: var(--color-primary);
   font-weight: 700;
